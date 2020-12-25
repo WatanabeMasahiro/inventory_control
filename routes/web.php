@@ -19,8 +19,8 @@ Route::post('inventory_control', 'stockController@homePost');
 Route::get('inventory_control/data_register', 'stockController@registerGet');
 Route::post('inventory_control/data_register', 'stockController@registerPost');
 
-Route::get('inventory_control/delete', 'stockController@deleteGet');
-Route::post('inventory_control/delete', 'stockController@deletePost');
+Route::get('inventory_control/detail_delete', 'stockController@deleteGet');
+Route::post('inventory_control/detail_delete', 'stockController@deletePost');
 
 // Route::get('Inventory_control', 'stockController@');
 // Route::post('Inventory_control', 'stockController@');

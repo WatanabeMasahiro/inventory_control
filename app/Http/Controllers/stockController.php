@@ -29,12 +29,12 @@ class stockController extends Controller
 
     public function deleteGet(Request $request)
     {
-        return view('delete', compact());
+        return view('detail_delete', );
     }
 
     public function deletePost(Request $request)
     {
-        return view('delete', compact());
+        return view('detail_delete', compact());
     }
 
 

@@ -5,7 +5,7 @@
     <div class="container mainContents">    <!-- mainContents -->
 
         <div class="text-center">
-            <a class="btn btn-lg btn-primary my-4" href="/data_register" role="button">データ登録</a>
+            <a class="btn btn-lg btn-primary my-4" href="/inventory_control/data_register" role="button">データ登録</a>
         </div>
 
         <table class="noset-table table table-hover table-dark recordTable">

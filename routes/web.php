@@ -16,8 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('inventory_control', 'stockController@homeGet');
 Route::post('inventory_control', 'stockController@homePost');
 
-Route::get('inventory_control/register', 'stockController@registerGet');
-Route::post('inventory_control/register', 'stockController@registerPost');
+Route::get('inventory_control/data_register', 'stockController@registerGet');
+Route::post('inventory_control/data_register', 'stockController@registerPost');
 
 Route::get('inventory_control/delete', 'stockController@deleteGet');
 Route::post('inventory_control/delete', 'stockController@deletePost');

@@ -19,12 +19,12 @@ class stockController extends Controller
 
     public function registerGet(Request $request)
     {
-        return view('register', compact());
+        return view('data_register', );
     }
 
     public function registerPost(Request $request)
     {
-        return view('register', compact());
+        return view('data_register', compact());
     }
 
     public function deleteGet(Request $request)

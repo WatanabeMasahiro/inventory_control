@@ -15,7 +15,7 @@
                     @if (Auth::check())
                     <p class="text-muted userInfo">　<i class="fa fa-user h4" aria-hidden="true"></i> 『　{{$user -> name}}　』さん　</p>
                     @else
-                    <p class="text-muted userInfo">　<a href="/register">ユーザー登録</a>　</p>
+                    <p class="text-muted userInfo">　<a href="">ユーザー登録</a>　</p>
                     @endif
                 </div>
             </div>

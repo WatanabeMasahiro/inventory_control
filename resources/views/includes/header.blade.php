@@ -2,7 +2,9 @@
     <div class="container-fluid header">    <!-- header -->
 
         <div class="siteTitle text-center">
-            <h1 class="siteTitle mt-4 pb-1"><a href="/inventory_control" style="text-decoration: none;"><b class="text-success"><i class="fas fa-boxes mr-3"></i>在庫管理くん<i class="fas fa-boxes ml-3"></i></b></a></h1>
+            <h1 class="siteTitle mt-4 pb-1"><a href="/inventory_control" style="text-decoration: none;">
+                <b class="text-success"><i class="fas fa-boxes mr-3"></i>在庫管理くん<i class="fas fa-boxes ml-3"></i></b>
+            </a></h1>
         </div>
 
         <hr class="w-75 pb-0 mb-0">
@@ -13,9 +15,9 @@
             <div class="col-3 userName">
                 <div class="text-center">
                     @if (Auth::check())
-                    <p class="text-muted userInfo p-2">　<i class="fa fa-user h4" aria-hidden="true"></i> 『　{{$user -> name}}　』さん　</p>
+                    <p class="text-muted userInfo p-2">　<b><i class="fa fa-user h4" aria-hidden="true"></i> 『　{{$user -> name}}　』さん<b>　</p>
                     @else
-                    <p class="text-muted userInfo p-2">　<a href="/register">ユーザー登録</a>　</p>
+                    <p class="text-muted userInfo p-2">　<a href="/register"><b>ユーザー登録</b></a>　</p>
                     @endif
                 </div>
             </div>

@@ -13,16 +13,16 @@
             <div class="col-3 userName">
                 <div class="text-center">
                     @if (Auth::check())
-                    <p class="text-muted userInfo">　<i class="fa fa-user h4" aria-hidden="true"></i> 『　{{$user -> name}}　』さん　</p>
+                    <p class="text-muted userInfo p-2">　<i class="fa fa-user h4" aria-hidden="true"></i> 『　{{$user -> name}}　』さん　</p>
                     @else
-                    <p class="text-muted userInfo">　<a href="/register">ユーザー登録</a>　</p>
+                    <p class="text-muted userInfo p-2">　<a href="/register">ユーザー登録</a>　</p>
                     @endif
                 </div>
             </div>
 
             <div class="col-2"></div>
 
-            <div class="col-3 mt-4"><a class="" href="">ログアウト</a> / <a class="" href="">退会</a></div>
+            <div class="col-3 mt-4 pt-2"><a class="" href="">ログアウト</a> / <a class="" href="">退会</a></div>
 
             <div class="col-2"></div>
         </div>

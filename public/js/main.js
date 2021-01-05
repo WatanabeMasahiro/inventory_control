@@ -1,30 +1,10 @@
 $(function() {
 
 
-<<<<<<< HEAD
   f_clickConfirm();
   f_lowerLimit_100data();
   f_flashingWarning();
 
-=======
-<<<<<<< Updated upstream
-
-});
-=======
-  f_location_update_delete();
-  f_clickConfirm();
-  f_lowerLimit_100data();
-  f_flashingWarning();
-
-
-  function f_location_update_delete() {
-    $('.recordData').on('click', function() {
-      var send_id = $(this).find('.sendLink').text();
-      location.href = '/inventory_control/update_delete?send_id=' + send_id;
-    });
-  }
-
->>>>>>> update_d
 
   function f_clickConfirm() {
     $('.taikaiBtn').on('click', ()=> {
@@ -65,7 +45,3 @@ $(function() {
 
 
 });
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
->>>>>>> update_d

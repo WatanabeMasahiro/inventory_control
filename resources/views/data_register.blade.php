@@ -12,15 +12,54 @@
 
         <form action="post" class="my-3">
 
+<<<<<<< Updated upstream
             <div class="row">
                 <div class="col-md-4 mt-4">
                     <p class=""><b>カテゴリー</b></p>
                     <input name="category" type="text" class="px-2 py-1">
+=======
+    <div class="flashingWarning mt-4">
+
+        @error('goods')
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col w-75">
+                <p class="bg-warning text-danger text-center">品物を入力して下さいっ！</p>
+            </div>
+            <div class="col-1"></div>
+        </div>
+        @enderror
+
+        @error('numbers')
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col w-75">
+                <p class="bg-warning text-danger text-center">個数を入力して下さいっ！</p>
+            </div>
+            <div class="col-1"></div>
+        </div>
+        @enderror
+
+    </div>
+
+
+        <form action="/inventory_control/data_register" method="post" class="my-3">
+            @csrf
+            <input type="hidden" name="user_id" value="{{$user->id}}">
+            <div class="row">
+                <div class="col-md-4 mt-4">
+                    <p class=""><b>カテゴリー</b></p>
+                    <input name="category" type="text" value="{{old('category')}}" class="text-center px-2 py-1">
+>>>>>>> Stashed changes
                 </div>
 
                 <div class="col-md-4 mt-4">
                     <p class=""><b>品　物</b></p>
+<<<<<<< Updated upstream
                     <input name="goods" type="text" class="px-2 py-1">
+=======
+                    <input name="goods" type="text" value="{{old('goods')}}" class="text-center px-2 py-1">
+>>>>>>> Stashed changes
                 </div>
 
                 <div class="col-md-4 mt-4">

@@ -2,24 +2,29 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use App\Models\Stock;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class stockController extends Controller
 {
 
     public function homeGet(Request $request)
     {
-        return view('home', );
+        $user = Auth::user();
+        return view('homepage', compact('user'));
     }
 
     public function homePost(Request $request)
     {
-        return view('home', compact());
+        return view('homepage', compact());
     }
 
     public function registerGet(Request $request)
     {
-        return view('data_register', );
+        $user = Auth::user();
+        return view('data_register',  compact('user'));
     }
 
     public function registerPost(Request $request)
@@ -29,7 +34,8 @@ class stockController extends Controller
 
     public function deleteGet(Request $request)
     {
-        return view('update_delete', );
+        $user = Auth::user();
+        return view('update_delete',  compact('user'));
     }
 
     public function deletePost(Request $request)

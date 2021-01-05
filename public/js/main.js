@@ -1,6 +1,12 @@
-$(function() {{
+$(function() {
 
 
+<<<<<<< HEAD
+  f_clickConfirm();
+  f_lowerLimit_100data();
+  f_flashingWarning();
+
+=======
 <<<<<<< Updated upstream
 
 });
@@ -18,6 +24,7 @@ $(function() {{
     });
   }
 
+>>>>>>> update_d
 
   function f_clickConfirm() {
     $('.taikaiBtn').on('click', ()=> {
@@ -58,4 +65,7 @@ $(function() {{
 
 
 });
+<<<<<<< HEAD
+=======
 >>>>>>> Stashed changes
+>>>>>>> update_d

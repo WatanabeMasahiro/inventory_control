@@ -69,7 +69,6 @@ class StockModelController extends Controller
             unset($form['_token']);
             $stockFind->fill($form)->save();
         } elseif ($request->has('deleteBtn')){
-            $this->validate($request, Stock::$rules);
             Stock::find($request->id)->delete();
         }
         return redirect('/inventory_control');

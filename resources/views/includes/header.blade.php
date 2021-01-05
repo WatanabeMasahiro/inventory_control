@@ -1,5 +1,6 @@
 <body>
-    <div class="container-fluid header">    <!-- header -->
+    <div class="container header">    <!-- header -->
+
 
         <div class="siteTitle text-center">
             <h1 class="siteTitle mt-4 pb-1"><a href="/inventory_control" style="text-decoration: none;">
@@ -9,24 +10,24 @@
 
         <hr class="w-75 pb-0 mb-0">
 
-        <div class="row">
-            <div class="col-2"></div>
-
-            <div class="col-3 userName">
-                <div class="text-center">
-                    @if (Auth::check())
-                    <p class="text-muted userInfo p-2">　<b><i class="fa fa-user h4" aria-hidden="true"></i> 『　{{$user -> name}}　』さん<b>　</p>
-                    @else
-                    <p class="text-muted userInfo p-2">　<a href="/register"><b>ユーザー登録</b></a>　</p>
-                    @endif
-                </div>
+        <div class="">
+            
+            <div class="d-block userName text-center">
+                @if (Auth::check())
+                <p class="text-muted userInfo_M pt-2 pb-1">　<b><i class="fa fa-user h4" aria-hidden="true"></i> 『　{{$user -> name}}　』さん</b>　</p>
+                @else
+                <p class="text-muted userInfo_M p-2">　<a href="/register"><b>ユーザー登録</b></a>　</p>
+                @endif
             </div>
 
-            <div class="col-2"></div>
+            <div class="text-center d-block my-2 pt-2">
+                <a id="logout-link" class="logout-links" href="{{ route('logout') }}">{{ __('ログアウト') }}</a> / <a class="" href="#">退会</a>
+            </div>
 
-            <div class="col-3 mt-4 pt-2"><a class="" href="">ログアウト</a> / <a class="" href="">退会</a></div>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
 
-            <div class="col-2"></div>
         </div>
 
         <hr class="pt-0 mt-0">

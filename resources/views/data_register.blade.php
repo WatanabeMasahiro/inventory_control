@@ -2,6 +2,19 @@
 
 @include('includes.header')
 
+    <div class="ml-5">
+        <p class="text-muted d-inline">登録データ数：
+            @foreach($userInfo as $info)
+                @if ( $info->id == $user->id )
+                    <div id="userInfoCount" class="text-muted d-inline">
+                        {{ $info->stocks_count }}
+                    </div>
+                        @break
+                    @endif
+            @endforeach
+        </p>
+    </div>
+
 
     <div class="subTitle_1 text-center my-5">
         <h2 class="subTitle_1 text-center text-dark pb-2 mb-2"><b>登　録　画　面</b></h2>
@@ -10,14 +23,7 @@
 
     <div class="container mainContents text-center border border-primary rounded w-75 px-0">    <!-- mainContents -->
 
-        <form action="post" class="my-3">
 
-<<<<<<< Updated upstream
-            <div class="row">
-                <div class="col-md-4 mt-4">
-                    <p class=""><b>カテゴリー</b></p>
-                    <input name="category" type="text" class="px-2 py-1">
-=======
     <div class="flashingWarning mt-4">
 
         @error('goods')
@@ -50,27 +56,22 @@
                 <div class="col-md-4 mt-4">
                     <p class=""><b>カテゴリー</b></p>
                     <input name="category" type="text" value="{{old('category')}}" class="text-center px-2 py-1">
->>>>>>> Stashed changes
                 </div>
 
                 <div class="col-md-4 mt-4">
                     <p class=""><b>品　物</b></p>
-<<<<<<< Updated upstream
-                    <input name="goods" type="text" class="px-2 py-1">
-=======
                     <input name="goods" type="text" value="{{old('goods')}}" class="text-center px-2 py-1">
->>>>>>> Stashed changes
                 </div>
 
                 <div class="col-md-4 mt-4">
                     <p class=""><b>個　数</b></p>
-                    <input name="numbers" type="number" value="0" class="text-center pl-3 py-1">
+                    <input name="numbers" type="number" value="{{old('numbers')}}" class="text-center pl-3 py-1">
                 </div>
             </div>
 
             <div class="mt-5">
                 <p class=""><b>備　考</b></p>
-                <textarea name="remarks" cols="40" rows="10" class="p-2"></textarea>
+                <textarea name="remarks" cols="40" rows="10" value="{{old('remarks')}}" class="p-2"></textarea>
             </div>
 
             <input type="submit" value="送信" class="my-3 px-5 btn btn-secondary btn-lg">

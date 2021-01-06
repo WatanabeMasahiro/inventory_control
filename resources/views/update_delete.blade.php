@@ -59,23 +59,23 @@
             <div class="row">
                 <div class="col-md-4 mt-4">
                     <p class=""><b>カテゴリー</b></p>
-                    <input name="category" type="text" value="{{$selectUserStock['category']}}" class="text-center px-2 py-1">
+                    <input name="category" type="text" value="{{ old('category', $selectUserStock['category']) }}" placeholder="{{$selectUserStock['category']}}" class="text-center px-2 py-1">
                 </div>
 
                 <div class="col-md-4 mt-4">
                     <p class=""><b>品　物</b></p>
-                    <input name="goods" type="text" value="{{$selectUserStock['goods']}}" class="text-center px-2 py-1">
+                    <input name="goods" type="text" value="{{ old('goods', $selectUserStock['goods']) }}" placeholder="{{$selectUserStock['goods']}}" class="text-center px-2 py-1">
                 </div>
 
                 <div class="col-md-4 mt-4">
                     <p class=""><b>個　数</b></p>
-                    <input name="numbers" type="number" value="{{$selectUserStock['numbers']}}" class="text-center pl-3 py-1">
+                    <input name="numbers" type="number" value="{{ old('numbers', $selectUserStock['numbers']) }}" placeholder="{{$selectUserStock['numbers']}}" class="text-center pl-3 py-1">
                 </div>
             </div>
 
             <div class="mt-5">
                 <p class=""><b>備　考</b></p>
-                <textarea name="remarks" cols="40" rows="10" class="p-2">{{$selectUserStock['remarks']}}</textarea>
+                <textarea name="remarks" cols="40" rows="10" class="p-2" placeholder="{{$selectUserStock['remarks']}}">{{ old('remarks', $selectUserStock['remarks']) }}</textarea>
             </div>
 
             <div class="text-center my-4 mb-5">

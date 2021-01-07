@@ -2,19 +2,6 @@
 
 @include('includes.header')
 
-    <div class="ml-5">
-        <p class="text-muted d-inline">登録データ数：
-            @foreach($userInfo as $info)
-                @if ( $info->id == $user->id )
-                    <div id="userInfoCount" class="text-muted d-inline">
-                        {{ $info->stocks_count }}
-                    </div>
-                        @break
-                    @endif
-            @endforeach
-        </p>
-    </div>
-
 
     <div class="subTitle_1 text-center my-5">
         <h2 class="subTitle_1 text-center text-dark pb-2 mb-2"><b>登　録　画　面</b></h2>
@@ -71,7 +58,7 @@
 
             <div class="mt-5">
                 <p class=""><b>備　考</b></p>
-                <textarea name="remarks" cols="40" rows="10" value="{{old('remarks')}}" class="p-2"></textarea>
+                <textarea name="remarks" cols="40" rows="10" class="p-2">{{old('remarks')}}</textarea>
             </div>
 
             <input type="submit" value="送信" class="my-3 px-5 btn btn-secondary btn-lg">

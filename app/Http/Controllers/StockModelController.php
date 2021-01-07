@@ -15,9 +15,14 @@ class StockModelController extends Controller
         $userInfo = $user->withCount('stocks')->get();
         $sort = $request->sort;
         if (isset($sort) == true) {
-            $stockData = Stock::orderBy($sort, 'asc')->paginate(5);
+            $stockData = Stock::where('user_id', $user->id)
+                ->orderBy($sort, 'asc')
+                ->paginate(5);
+            // $stockData = $user->join('stocks', 'users.id', '=', 'stocks.user_id')->orderBy($sort, 'asc')->paginate(5);
+            // $stockData = $user->leftJoin('stocks', 'users.id', '=', 'stocks.user_id')->where('user_id', $user->id)->orderBy($sort, 'asc')->paginate(5);
         } else {
-            $stockData = Stock::paginate(5);
+            $stockData = Stock::where('user_id', $user->id)
+                ->paginate(5);
         }
         return view('homepage', compact('user', 'userInfo', 'sort', 'stockData'));
     }

@@ -24,7 +24,7 @@ class stockController extends Controller
     public function registerGet(Request $request)
     {
         $user = Auth::user();
-        return view('data_register',  compact('user'));
+        return view('data_register', compact('user'));
     }
 
     public function registerPost(Request $request)

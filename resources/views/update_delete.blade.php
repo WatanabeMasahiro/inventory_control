@@ -2,19 +2,6 @@
 
 @include('includes.header')
 
-    <div class="ml-5">
-        <p class="text-muted d-inline">登録データ数：
-            @foreach($userInfo as $info)
-                @if ( $info->id == $user->id )
-                    <div id="userInfoCount" class="text-muted d-inline">
-                        {{ $info->stocks_count }}
-                    </div>
-                        @break
-                    @endif
-            @endforeach
-        </p>
-    </div>
-
 
     <div class="subTitle_3 text-center d-block d-sm-none my-5">
         <h2 class="subTitle_2 text-center text-dark pb-2 mb-2"><b>更　新　・　削　除</b></h2>

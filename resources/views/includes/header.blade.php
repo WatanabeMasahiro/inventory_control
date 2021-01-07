@@ -33,3 +33,16 @@
         <hr class="pt-0 mt-0">
 
     </div>                                  <!-- /header -->
+
+    <div class="ml-5">
+        <p class="text-muted d-inline">登録データ数：
+            @foreach($userInfo as $info)
+                @if ( $info->id == $user->id )
+                    <div id="userInfoCount" class="text-muted d-inline">
+                        {{ $info->stocks_count }}
+                    </div>
+                    @break
+                @endif
+            @endforeach
+        </p>
+    </div>

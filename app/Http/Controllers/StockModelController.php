@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 
 class StockModelController extends Controller
 {
-    public function index(Request $request)
+    public function indexGet(Request $request)
     {
         $user = Auth::user();
         $userInfo = $user->withCount('stocks')->get();
@@ -17,20 +17,24 @@ class StockModelController extends Controller
         if (isset($sort) == true) {
             $stockData = Stock::where('user_id', $user->id)
                 ->orderBy($sort, 'asc')
-                ->paginate(5);
+                ->paginate(20);
             // $stockData = $user->join('stocks', 'users.id', '=', 'stocks.user_id')->orderBy($sort, 'asc')->paginate(5);
             // $stockData = $user->leftJoin('stocks', 'users.id', '=', 'stocks.user_id')->where('user_id', $user->id)->orderBy($sort, 'asc')->paginate(5);
         } else {
             $stockData = Stock::where('user_id', $user->id)
-                ->paginate(5);
+                ->paginate(20);
         }
         return view('homepage', compact('user', 'userInfo', 'sort', 'stockData'));
     }
 
-    // public function indexPost(Request $request)
-    // {
-    //     return view('homepage', compact());
-    // }
+    public function indexPost(Request $request)
+    {
+        $this->validate($request, Stock::$rules);
+            $stockFind = Stock::find($request->id);
+            $stockFind->numbers = $request->numbers;
+            $stockFind->save();
+        return redirect('/inventory_control');
+    }
 
     public function registerGet(Request $request)
     {
@@ -77,6 +81,22 @@ class StockModelController extends Controller
             Stock::find($request->id)->delete();
         }
         return redirect('/inventory_control');
+    }
+
+    public function withdrawalGet(Request $request)
+    {
+        $user = Auth::user();
+        return view('withdrawal', compact('user'));
+    }
+
+    public function withdrawalPost(Request $request)
+    {
+        $user = Auth::user();
+        Auth::logout();
+        $user->where('id', $user->id)->delete();
+        Stock::where('user_id', $user->id)->delete();
+
+        return redirect('/login');
     }
 
 }

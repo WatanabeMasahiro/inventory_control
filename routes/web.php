@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('inventory_control', 'StockModelController@index')->middleware('auth');
+Route::get('inventory_control', 'StockModelController@indexGet')->middleware('auth');
 
-// Route::post('inventory_control', 'stockController@homePost');
+Route::post('inventory_control', 'StockModelController@indexPost');
 
 
 Route::get('inventory_control/data_register', 'StockModelController@registerGet')->middleware('auth');
@@ -26,6 +26,11 @@ Route::post('inventory_control/data_register', 'StockModelController@registerPos
 Route::get('inventory_control/update_delete', 'StockModelController@update_deleteGet')->middleware('auth');
 
 Route::post('inventory_control/update_delete', 'StockModelController@update_deletePost');
+
+
+Route::get('inventory_control/withdrawal', 'StockModelController@withdrawalGet')->middleware('auth');
+
+Route::post('inventory_control/withdrawal', 'StockModelController@withdrawalPost');
 
 
 // Route::get('Inventory_control', 'stockController@');

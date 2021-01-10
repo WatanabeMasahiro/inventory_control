@@ -12,8 +12,10 @@ class Stock extends Model
     protected $guarded = array('id');
 
     public static $rules = array (
-        'goods' => 'required',
-        'numbers'  => 'required',
+        'category' => 'max:50',
+        'goods' => 'required|max:50',
+        'numbers' => 'required|lte:9999',
+        'remarks' => 'max:1000',
     );
 
 }

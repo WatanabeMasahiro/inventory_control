@@ -21,7 +21,7 @@
             </div>
 
             <div class="text-center d-block my-2 pt-2">
-                <a id="logout-link" class="logout-links" href="{{ route('logout') }}">{{ __('ログアウト') }}</a> / <a class="" href="#">退会</a>
+                <a id="logout-link" class="logout-links" href="{{ route('logout') }}">{{ __('ログアウト') }}</a> / <a class="" href="/inventory_control/withdrawal">退会</a>
             </div>
 
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -34,15 +34,20 @@
 
     </div>                                  <!-- /header -->
 
+
+    @foreach($userInfo as $info)
+        @if ( $info->id == $user->id )
+            @php
+                $counter = $info->stocks_count;
+            @endphp
+            @break
+        @endif
+    @endforeach
+
     <div class="ml-5">
         <p class="text-muted d-inline">登録データ数：
-            @foreach($userInfo as $info)
-                @if ( $info->id == $user->id )
-                    <div id="userInfoCount" class="text-muted d-inline">
-                        {{ $info->stocks_count }}
-                    </div>
-                    @break
-                @endif
-            @endforeach
+            <div id="userInfoCount" class="text-muted d-inline">
+                {{ $counter }}
+            </div>
         </p>
     </div>

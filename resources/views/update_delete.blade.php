@@ -15,29 +15,49 @@
     <div class="container mainContents text-center border border-primary rounded w-75 px-0">    <!-- mainContents -->
 
 
-        <div class="flashingWarning mt-4">
+    <div class="flashingWarning mt-4">
 
-            @error('goods')
-            <div class="row">
-                <div class="col-1"></div>
-                <div class="col w-75">
-                    <p class="bg-warning text-danger text-center">品物を入力して下さいっ！</p>
-                </div>
-                <div class="col-1"></div>
+        @error('category')
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col w-75">
+                <p class="bg-warning text-danger text-center">カテゴリーの文字数を少なくして下さいっ！</p>
             </div>
-            @enderror
-
-            @error('numbers')
-            <div class="row">
-                <div class="col-1"></div>
-                <div class="col w-75">
-                    <p class="bg-warning text-danger text-center">個数を入力して下さいっ！</p>
-                </div>
-                <div class="col-1"></div>
-            </div>
-            @enderror
-
+            <div class="col-1"></div>
         </div>
+        @enderror
+
+        @error('goods')
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col w-75">
+                <p class="bg-warning text-danger text-center">品物を入力するか、文字数を少なくして下さいっ！</p>
+            </div>
+            <div class="col-1"></div>
+        </div>
+        @enderror
+
+        @error('numbers')
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col w-75">
+                <p class="bg-warning text-danger text-center">個数を入力するか、9999以下の数にして下さいっ！</p>
+            </div>
+            <div class="col-1"></div>
+        </div>
+        @enderror
+
+        @error('remarks')
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col w-75">
+                <p class="bg-warning text-danger text-center">備考の文字数を少なくして下さいっ！</p>
+            </div>
+            <div class="col-1"></div>
+        </div>
+        @enderror
+
+    </div>
 
 
         <form action="/inventory_control/update_delete" method="post" class="my-3">
@@ -66,8 +86,8 @@
             </div>
 
             <div class="text-center my-4 mb-5">
-                <input type="submit" value="更　新" name="updateBtn" class="d-inline-block btn btn-lg btn-warning mr-4 px-4"/>
-                <input type="submit" value="削　除" name="deleteBtn" class="d-inline-block btn btn-lg btn-danger ml-4 px-4"/>
+                <input type="submit" value="更　新" name="updateBtn" class="d-inline-block btn btn-lg btn-warning mr-4 px-4" id="updateBtn"/>
+                <input type="submit" value="削　除" name="deleteBtn" class="d-inline-block btn btn-lg btn-danger ml-4 px-4" id="deleteBtn"/>
             </div>
 
         </form>

@@ -12,6 +12,7 @@ class StockModelController extends Controller
     public function indexGet(Request $request)
     {
         $user = Auth::user();
+        $reqPage = $request->page;
         $userInfo = $user->withCount('stocks')->get();
         $sort = $request->sort;
         if (isset($sort) == true) {
@@ -24,18 +25,18 @@ class StockModelController extends Controller
             $stockData = Stock::where('user_id', $user->id)
                 ->paginate(20);
         }
-        return view('homepage', compact('user', 'userInfo', 'sort', 'stockData'));
+        return view('homepage', compact('user', 'reqPage', 'userInfo', 'sort', 'stockData'));
     }
 
-    public function indexPost(Request $request)
-    {
-        // dd($request);
-        $this->validate($request, Stock::$rules);
-            $stockFind = Stock::find($request->id);
-            $stockFind->numbers = $request->numbers;
-            $stockFind->save();
-        return redirect('/inventory_control');
-    }
+    // public function indexPost(Request $request)
+    // {
+    //     // dd($request);
+    //     $this->validate($request, Stock::$rules);
+    //         $stockFind = Stock::find($request->id);
+    //         $stockFind->numbers = $request->numbers;
+    //         $stockFind->save();
+    //     return redirect('/inventory_control');
+    // }
 
     public function registerGet(Request $request)
     {

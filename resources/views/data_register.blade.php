@@ -11,49 +11,49 @@
     <div class="container mainContents text-center border border-primary rounded w-75 px-0">    <!-- mainContents -->
 
 
-    <div class="flashingWarning mt-4">
+        <div class="flashingWarning mt-4">
 
-        @error('category')
-        <div class="row">
-            <div class="col-1"></div>
-            <div class="col w-75">
-                <p class="bg-warning text-danger text-center">カテゴリーの文字数を少なくして下さいっ！</p>
+            @error('category')
+            <div class="row">
+                <div class="col-1"></div>
+                <div class="col w-75">
+                    <p class="bg-warning text-danger text-center">カテゴリーの文字数を少なくして下さいっ！</p>
+                </div>
+                <div class="col-1"></div>
             </div>
-            <div class="col-1"></div>
-        </div>
-        @enderror
+            @enderror
 
-        @error('goods')
-        <div class="row">
-            <div class="col-1"></div>
-            <div class="col w-75">
-                <p class="bg-warning text-danger text-center">品物を入力するか、文字数を少なくして下さいっ！</p>
+            @error('goods')
+            <div class="row">
+                <div class="col-1"></div>
+                <div class="col w-75">
+                    <p class="bg-warning text-danger text-center">品物を入力するか、文字数を少なくして下さいっ！</p>
+                </div>
+                <div class="col-1"></div>
             </div>
-            <div class="col-1"></div>
-        </div>
-        @enderror
+            @enderror
 
-        @error('numbers')
-        <div class="row">
-            <div class="col-1"></div>
-            <div class="col w-75">
-                <p class="bg-warning text-danger text-center">個数を入力するか、9999以下の数にして下さいっ！</p>
+            @error('numbers')
+            <div class="row">
+                <div class="col-1"></div>
+                <div class="col w-75">
+                    <p class="bg-warning text-danger text-center">個数を入力するか、9999以下の数にして下さいっ！</p>
+                </div>
+                <div class="col-1"></div>
             </div>
-            <div class="col-1"></div>
-        </div>
-        @enderror
+            @enderror
 
-        @error('remarks')
-        <div class="row">
-            <div class="col-1"></div>
-            <div class="col w-75">
-                <p class="bg-warning text-danger text-center">備考の文字数を少なくして下さいっ！</p>
+            @error('remarks')
+            <div class="row">
+                <div class="col-1"></div>
+                <div class="col w-75">
+                    <p class="bg-warning text-danger text-center">備考の文字数を少なくして下さいっ！</p>
+                </div>
+                <div class="col-1"></div>
             </div>
-            <div class="col-1"></div>
-        </div>
-        @enderror
+            @enderror
 
-    </div>
+        </div>
 
 
         <form action="/inventory_control/data_register" method="post" class="my-3">
@@ -84,6 +84,9 @@
             <input type="submit" value="送信" class="my-3 px-5 btn btn-secondary btn-lg">
 
         </form>
+        
+
+        <a href="/inventory_control" class="d-block text-center my-4 font-weight-normal">＜＜&nbsp;ホーム画面に戻る&nbsp;＞＞</a>
 
     </div>                                  <!-- /mainContents -->
 

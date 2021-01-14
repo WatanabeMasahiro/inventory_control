@@ -92,6 +92,8 @@
 
         </form>
 
+        <a href="/inventory_control" class="d-block text-center my-4 font-weight-normal">＜＜&nbsp;ホーム画面に戻る&nbsp;＞＞</a>
+
     </div>                                  <!-- /mainContents -->
 
 

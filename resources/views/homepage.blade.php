@@ -2,6 +2,7 @@
 
 @include('includes.header')
 
+<div class="reqPage d-none">{{$reqPage}}</div>
 
     <div class="container mainContents">    <!-- mainContents -->
 
@@ -53,12 +54,13 @@
                         {{Str::limit( $stock->goods, 14 )}}
                     </td>
                     <td class="text-center w-25 align-middle">
-                        <form method="POST" action="/inventory_control">
+                        <!-- <form method="POST" action="/inventory_control">
                             @csrf
                             <input name="id" type="hidden" value="{{$stock->id}}">
                             <input name="numbers" type="number" value="{{$stock->numbers}}" class="pl-3 my-1 text-center w-75">
                             <input type="submit" value="送信" class="my-1">
-                        </form>
+                        </form> -->
+                        {{$stock->numbers}}
                     </td>
                     <td class="px-3 align-middle">
                         <pre>{{Str::limit( $stock->remarks, 40 )}}</pre>

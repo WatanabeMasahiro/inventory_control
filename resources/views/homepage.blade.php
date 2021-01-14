@@ -53,7 +53,7 @@
                         {{Str::limit( $stock->goods, 14 )}}
                     </td>
                     <td class="text-center w-25 align-middle">
-                        <form action="/inventory_control" method="POST">
+                        <form method="POST" action="/inventory_control">
                             @csrf
                             <input name="id" type="hidden" value="{{$stock->id}}">
                             <input name="numbers" type="number" value="{{$stock->numbers}}" class="pl-3 my-1 text-center w-75">

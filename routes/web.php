@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('inventory_control', 'StockModelController@indexGet')->middleware('auth');
 
-Route::post('inventory_control', 'StockModelController@indexPost');
+Route::post('inventory_control', 'StockModelController@indexPost')->name('indexPost');
 
 
 Route::get('inventory_control/data_register', 'StockModelController@registerGet')->middleware('auth');

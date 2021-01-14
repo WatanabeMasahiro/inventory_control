@@ -3,6 +3,7 @@ $(function() {
   // f_location_update_delete();
   f_clickConfirm();
   f_lowerLimit_100data();
+  f_withdrawal_dataCount();
   f_flashingWarning();
 
 
@@ -43,7 +44,7 @@ $(function() {
       if (!confirm("ログアウトしますか？" )) {
         return false;
       }
-      document.getElementById('logout-form').submit();
+      $('#logout-form').submit();
     });
   }
 
@@ -55,6 +56,13 @@ $(function() {
         alert('データ数は１００までしか登録できません。');
         window.location.href = '/inventory_control';
       }
+    }
+  }
+
+
+  function f_withdrawal_dataCount() {
+    if(location.pathname == "/inventory_control/withdrawal") {
+      $('.dataCount').hide();
     }
   }
 

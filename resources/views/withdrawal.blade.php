@@ -7,11 +7,11 @@
 
   <div class="row justify-content-center">
     <div class="col-md-8">
-      <div class="card" style="box-shadow: 0px 0px 10px 0 rgba(10, 78, 230, 0.2); border:2px solid rgba(0, 80, 235, 0.2);">
+      <div class="card taikaiCrad_style" style="box-shadow: 0px 0px 10px 0 rgba(10, 78, 230, 0.2); border:2px solid rgba(0, 80, 235, 0.2);">
 
         <div class="card-header text-center text-danger h5">退会ボタンを押して下さい</div>
 
-        <div class="card-body pb-2">
+        <div class="card-body pb-4">
 
           <form method="POST" action="/inventory_control/withdrawal">
             @csrf
@@ -27,7 +27,7 @@
     </div>
   </div>
 
-  <a href="/inventory_control" class="d-block text-center mt-4">＜＜&nbsp;ホーム画面に戻る&nbsp;＞＞</a>
+  <a href="/inventory_control" class="d-block text-center mt-4 font-weight-normal">＜＜&nbsp;ホーム画面に戻る&nbsp;＞＞</a>
 </div>    <!-- /mainContents -->
 
 <hr>

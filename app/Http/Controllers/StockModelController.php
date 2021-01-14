@@ -29,6 +29,7 @@ class StockModelController extends Controller
 
     public function indexPost(Request $request)
     {
+        // dd($request);
         $this->validate($request, Stock::$rules);
             $stockFind = Stock::find($request->id);
             $stockFind->numbers = $request->numbers;
@@ -86,7 +87,8 @@ class StockModelController extends Controller
     public function withdrawalGet(Request $request)
     {
         $user = Auth::user();
-        return view('withdrawal', compact('user'));
+        $userInfo = $user->withCount('stocks')->get();
+        return view('withdrawal', compact('user', 'userInfo'));
     }
 
     public function withdrawalPost(Request $request)

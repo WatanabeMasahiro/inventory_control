@@ -44,7 +44,7 @@
         @endif
     @endforeach
 
-    <div class="ml-5">
+    <div class="dataCount ml-5">
         <p class="text-muted d-inline">登録データ数：
             <div id="userInfoCount" class="text-muted d-inline">
                 {{ $counter }}
